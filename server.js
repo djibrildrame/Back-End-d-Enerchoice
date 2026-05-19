@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const candidatureRoute = require("./routes/CandidatureRoute");
+const contactRoute = require("./routes/ContactRoute");
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/candidature", candidatureRoute);
+app.use("/api/contact", contactRoute);
+
 
 mongoose
   .connect(process.env.MONGO_URI)
